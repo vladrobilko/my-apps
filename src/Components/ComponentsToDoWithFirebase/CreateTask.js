@@ -9,7 +9,7 @@ function CreateTask() {
         e.preventDefault();
         addDoc(collection(db, "tasks"), {
             title,
-            completed: false,
+            done: false,
             created: Timestamp.now()
         }).then(r => console.log(r))
             .catch(e => console.log(e));

@@ -28,19 +28,22 @@ function TaskList(props) {
 
     return (
         <div>
-            <ul>
+            <ol class="list-group list-group-numbered">
                 {tasks.map(task => (
-                    <li key={task.id}>
-                        <button onClick={() => onDeleteTask(task.id)}>Delete</button>
-                        <button onClick={() => onToggleDone(task.id)}>Done</button>
-                        <button onClick={() => props.onEdit(task.id)}>Edit</button>
-                        {task.data.done
-                            ? <s>{task.data.title}</s>
-                            : task.data.title
-                        }
+                    <li key={task.id} class="list-group-item">
+                        <div className='row'>
+                            <div className='col-8'>
+                                {task.data.done ? <s>{task.data.title}</s> : task.data.title}
+                            </div>
+                            <div className='col-4'>
+                                <button onClick={() => onDeleteTask(task.id)}>Delete</button>
+                                <button onClick={() => onToggleDone(task.id)}>Done</button>
+                                <button onClick={() => props.onEdit(task.id)}>Edit</button>
+                            </div>
+                        </div>
                     </li>
                 ))}
-            </ul>
+            </ol>
         </div>
     );
 }

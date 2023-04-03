@@ -16,15 +16,21 @@ function CreateTask() {
         console.log(title);
         setTitle('');
     }
-    return(
+    return (
         <div>
-            <form>
+            <form className="input-group mb-3">
+                <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="btn btn-success">Add Task
+                </button>
                 <input
+                    className="form-control"
                     type="text"
                     placeholder="Enter title"
                     value={title}
                     onChange={e => setTitle(e.target.value)}/>
-                <button type="submit" onClick={handleSubmit}>Add Task</button>
+
             </form>
         </div>
     );

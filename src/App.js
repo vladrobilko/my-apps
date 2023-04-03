@@ -7,13 +7,13 @@ import ToDoWithFirebase from "./Components/ToDoWithFirebase";
 function App() {
 
     return (
-        <>
+        <div className='container'>
             <h1 style={{ color: 'forestgreen' }}>My small apps with react</h1>
             <ToDoWithFirebase/>
             <AlgebraicExpressions/>
             <CarTrip/>
             <CounterWithAddAndDelete/>
-        </>
+        </div>
     );
 }
 

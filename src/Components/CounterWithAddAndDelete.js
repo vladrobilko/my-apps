@@ -33,7 +33,7 @@ function CounterWithAddAndDelete() {
     };
 
     const deleteCounter = () => {
-        if(counts.length - 1 > 0){
+        if (counts.length - 1 > 0) {
             counts.pop();
             setCounts([...counts])
         }
@@ -45,9 +45,11 @@ function CounterWithAddAndDelete() {
             <hr/>
             <button onClick={addCounter}>Add counter</button>
             <button onClick={deleteCounter}>Delete counter</button>
-            <ul>
+            <ul className='list-group'>
                 {counts.map(item => (
-                    <li key={item.id}>
+                    <li
+                        key={item.id}
+                        className="list-group-item">
                         <button onClick={() => plus(item.id)}>Plus</button>
                         {item.value}
                         <button onClick={() => minus(item.id)}>Minus</button>
